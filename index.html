@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,18 +19,53 @@ font-family:Segoe UI,Arial;
 color:#e6f2ec;
 }
 
+/* WATERMARK */
+
+body::before{
+content:"";
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:900px;
+height:900px;
+background-image:url("https://lh3.googleusercontent.com/sitesv/APaQ0SSB5vRhEplmuBS10X2DwmnR0K-GeHMtSVvbEH_X_LYvs4on4hc0WcZkYAn1wA087aJIlsuBan74GGE3neGeT0ZTuamyrMAFsbI3wpLMT0_Iuz4tjLqMNyKISIXohV1kXRLZRfjK7ptIQuVJVos_QVMQn5zp4zQwkxjxZsZuLzlhlH4NxO3ye_ipXvpa3X6EH4LB-oFe8Ch4fpNHsOv9a-JGkkTX1fUSD5Sp=w1280");
+background-size:contain;
+background-repeat:no-repeat;
+opacity:0.06;
+pointer-events:none;
+z-index:0;
+}
+
+/* HEADER */
+
 .header{
+display:flex;
+align-items:center;
+gap:14px;
 padding:18px;
 font-size:26px;
 color:#9fd4b3;
 border-bottom:1px solid #1f4a35;
+position:relative;
+z-index:1;
 }
+
+/* LOGO */
+
+.logo{
+height:42px;
+}
+
+/* TABS */
 
 .tabs{
 display:flex;
 flex-wrap:wrap;
 background:#081912;
 border-bottom:1px solid #1f4a35;
+position:relative;
+z-index:1;
 }
 
 .tabs button{
@@ -45,19 +81,25 @@ border-right:1px solid #1f4a35;
 background:#174734;
 }
 
+/* PANELS */
+
 .section{
 display:none;
 padding:12px;
+position:relative;
+z-index:1;
 }
 
 .section.active{
 display:block;
 }
 
+/* NEWS FEEDS */
+
 .feed{
 height:60vh;
 overflow:auto;
-background:#081912;
+background:rgba(8,25,18,0.92);
 border-radius:6px;
 padding:10px;
 }
@@ -92,6 +134,8 @@ color:#8bc5ff;
 text-decoration:none;
 }
 
+/* MAPS */
+
 iframe{
 width:100%;
 height:85vh;
@@ -105,7 +149,14 @@ border-radius:6px;
 
 <body>
 
-<div class="header">BSG Strategic Awareness</div>
+<div class="header">
+
+<img class="logo"
+src="https://lh3.googleusercontent.com/sitesv/APaQ0SSB5vRhEplmuBS10X2DwmnR0K-GeHMtSVvbEH_X_LYvs4on4hc0WcZkYAn1wA087aJIlsuBan74GGE3neGeT0ZTuamyrMAFsbI3wpLMT0_Iuz4tjLqMNyKISIXohV1kXRLZRfjK7ptIQuVJVos_QVMQn5zp4zQwkxjxZsZuLzlhlH4NxO3ye_ipXvpa3X6EH4LB-oFe8Ch4fpNHsOv9a-JGkkTX1fUSD5Sp=w1280">
+
+BSG Strategic Awareness
+
+</div>
 
 <div class="tabs">
 
@@ -291,11 +342,10 @@ market.innerHTML+=html;
 }
 
 loadFeeds();
-
 setInterval(loadFeeds,300000);
 
 </script>
 
 </body>
 </html>
-
+```
